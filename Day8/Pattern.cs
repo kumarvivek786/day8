@@ -22,5 +22,26 @@ namespace Day8
                 Console.WriteLine("The input string '{0}' does not match the pattern.", inputString);
             }
         }
+        public static void Question2(string inputString)
+        {
+            Regex regex = new Regex(@"[a-zA-Z]+_[a-zA-Z]+");
+
+            MatchCollection matches = regex.Matches(inputString);
+
+            Console.WriteLine("The input string '{0}' contains {1} matches:", inputString, matches.Count);
+
+            foreach (Match match in matches)
+            {
+                Console.WriteLine("  Match: '{0}'", match.Value);
+            }
+        }
+        public static void Question3(string inputString)
+        {
+            Regex regex = new Regex(@"fox(es)?");
+
+            MatchCollection matches = regex.Matches(inputString);
+            Console.WriteLine("The Count of given Pattern in given String " + matches.Count);
+
+        }
     }
 }
